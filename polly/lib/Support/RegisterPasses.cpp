@@ -42,6 +42,8 @@
 #include "llvm/Support/TargetSelect.h"
 #include "llvm/Transforms/IPO.h"
 #include "llvm/Transforms/IPO/PassManagerBuilder.h"
+#include "polly/FlattenSchedule.h"
+#include "polly/LoopInversion.h"
 
 using namespace llvm;
 using namespace polly;
@@ -282,6 +284,7 @@ void initializePollyPasses(PassRegistry &Registry) {
   initializeRewriteByrefParamsPass(Registry);
   initializeCodegenCleanupPass(Registry);
   initializeFlattenSchedulePass(Registry);
+  initializeLoopInversionPass(Registry);
   initializeForwardOpTreePass(Registry);
   initializeDeLICMPass(Registry);
   initializeSimplifyPass(Registry);

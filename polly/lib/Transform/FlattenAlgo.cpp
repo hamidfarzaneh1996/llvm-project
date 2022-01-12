@@ -258,6 +258,7 @@ isl::union_map tryFlattenSequence(isl::union_map Schedule) {
 /// largest value. Then, construct a new schedule
 ///   { Stmt[i] -> [i * (u_X() - l_X() + 1), ...] }
 isl::union_map tryFlattenLoop(isl::union_map Schedule) {
+  
   assert(scheduleScatterDims(Schedule) >= 2);
 
   auto Remaining = scheduleProjectOut(Schedule, 0, 1);

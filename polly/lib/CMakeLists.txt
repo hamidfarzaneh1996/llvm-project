@@ -91,6 +91,8 @@ add_llvm_pass_plugin(Polly
   Transform/ScheduleTreeTransform.cpp
   Transform/FlattenSchedule.cpp
   Transform/FlattenAlgo.cpp
+  Transform/LoopInversion.cpp
+  Transform/InversionAlgo.cpp
   Transform/ForwardOpTree.cpp
   Transform/DeLICM.cpp
   Transform/ZoneAlgo.cpp

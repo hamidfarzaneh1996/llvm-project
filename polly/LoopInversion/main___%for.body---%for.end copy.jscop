@@ -1,0 +1,26 @@
+{
+   "arrays": [
+      {
+         "name": "MemRef_C",
+         "sizes": [
+            "*"
+         ],
+         "type": "float"
+      }
+   ],
+   "context": "{  :  }",
+   "name": "%for.body---%for.end",
+   "statements": [
+      {
+         "accesses": [
+            {
+               "kind": "write",
+               "relation": "{ Stmt_for_body[i0] -> MemRef_C[i0] }"
+            }
+         ],
+         "domain": "{ Stmt_for_body[i0] : 0 <= i0 <= 9 }",
+         "name": "Stmt_for_body",
+         "schedule": "{ Stmt_for_body[i0] -> [i0] }"
+      }
+   ]
+}
