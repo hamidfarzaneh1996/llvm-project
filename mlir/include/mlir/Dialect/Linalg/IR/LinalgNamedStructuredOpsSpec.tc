@@ -8,6 +8,11 @@ def matvec(A: f32(M, N), y: f32(N)) -> (x: f32(M)) {
   x(m) = std_addf<n>(std_mulf(A(m, n), y(n)));
 }
 
+ods_def<VecvecOp>:
+def vecvec(A: f32(N), y: f32(N)) -> (x: f32(1)) {
+  x(0) = std_addf<n>(std_mulf(A(n), y(n)));
+}
+
 ods_def<BatchMatmulOp>:
 def batch_matmul(A: f32(Batch, M, K), B: f32(Batch, K, N)) -> (C: f32(Batch, M, N)) {
   C(b, m, n) = std_addf<k>(std_mulf(A(b, m, k), B(b, k, n)));

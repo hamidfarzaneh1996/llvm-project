@@ -631,6 +631,8 @@ Optional<LinalgLoops> linalgOpToLoopsImplSwitch(Operation *op,
     return linalgOpToLoopsImpl<LoopTy, MatmulOp>(op, builder);
   if (isa<MatvecOp>(op))
     return linalgOpToLoopsImpl<LoopTy, MatvecOp>(op, builder);
+  if (isa<VecvecOp>(op)) // h4mid
+    return linalgOpToLoopsImpl<LoopTy, VecvecOp>(op, builder);
   if (isa<BatchMatmulOp>(op))
     return linalgOpToLoopsImpl<LoopTy, BatchMatmulOp>(op, builder);
   llvm_unreachable("Unexpected op in linalgOpToLoopsImpl");

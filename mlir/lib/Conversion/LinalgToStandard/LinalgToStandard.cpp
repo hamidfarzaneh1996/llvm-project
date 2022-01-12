@@ -245,6 +245,7 @@ void mlir::populateLinalgToStandardConversionPatterns(
   patterns.insert<
       LinalgOpConversion<BatchMatmulOp>,
       LinalgOpConversion<MatvecOp>,
+      LinalgOpConversion<VecvecOp>, // h4mid
       LinalgOpConversion<MatmulOp>>(ctx);
   // clang-format on
 }
